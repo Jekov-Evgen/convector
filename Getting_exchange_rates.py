@@ -35,4 +35,3 @@ class Start_Communication:
         current_rate = connection.launch()
         
         return current_rate
-

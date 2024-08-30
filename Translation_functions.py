@@ -13,6 +13,9 @@ class CurrencyTransfer:
         def output_result():
             try:
                 Number_of_hryvnia = float(Entering_numbers.get())
+                
+                if Number_of_hryvnia < 0:
+                    raise(ValueError)
             except:
                 ttk.Label(new_frm, text="Вы ввели неверный данные").grid(column=0, row=5)
                 
@@ -29,6 +32,8 @@ class CurrencyTransfer:
     
     
         new_grn_to_dll.mainloop()
+        
+        return Entering_numbers, result
         
     def creating_a_window_from_dollar_to_hryvnia(self):
         new_dll_to_grn = Toplevel()
